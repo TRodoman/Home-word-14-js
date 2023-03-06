@@ -8,13 +8,8 @@
 список справ з https://jsonplaceholder.typicode.com/ 
 //виводити які з можливістю редагування при натискані 
 */
-let button1 = false;
-let button2 = false;
-let button3 = false;
-let button4 = false;
-let button5 = false;
-let button6 = false;
 
+window.addEventListener("DOMContentLoaded", () => {
 const req = async (url) => {
   document.querySelector(".box_loader").classList.add("show");
   const data = await fetch(url);
@@ -34,7 +29,7 @@ const nav = document.querySelector(".nav").addEventListener("click", (e) => {
     });
   } else if (e.target.dataset.link === "star") {
   
-
+   
     req("https://swapi.dev/api/planets/").then((info) => {
       show(info);
       button1 = true;
@@ -157,7 +152,7 @@ const nav = document.querySelector(".nav").addEventListener("click", (e) => {
         });
       });
     });
-   
+
 
   } else {
   }
@@ -233,3 +228,4 @@ function createNode(element) {
 function append(parent, el) {
   return parent.appendChild(el);
 }
+});
